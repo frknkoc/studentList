@@ -9,14 +9,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("/students")
 @RequiredArgsConstructor
 public class StudentController {
     private final IStudentService studentService;
     @GetMapping
-    public ResponseEntity<List<Student>> getStudent(){
-        return new ResponseEntity<>(studentService.getAllStudents(), HttpStatus.NOT_FOUND);
+    public ResponseEntity<List<Student>> getStudents(){
+        return new ResponseEntity<>(studentService.getStudents(), HttpStatus.FOUND);
     }
 
     @PostMapping

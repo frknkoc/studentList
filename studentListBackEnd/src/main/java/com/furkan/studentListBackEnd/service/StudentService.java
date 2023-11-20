@@ -15,7 +15,7 @@ public class StudentService implements IStudentService{
     private final StudentRepository studentRepository;
 
     @Override
-    public List<Student> getAllStudents() {
+    public List<Student> getStudents() {
         return studentRepository.findAll();
     }
     @Override
