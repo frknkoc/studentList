@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddStudent from "./component/student/AddStudent";
 import AboutUs from "./component/AboutUs";
 import Footer from "./component/common/Footer";
+import EditStudent from "./component/student/EditStudent";
+import ProfileStudent from "./component/student/ProfileStudent";
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
       
       
       <Router>
-      <Navbar />
+      <Navbar/>
+
       <div className="container">
         <Routes >
         <Route
@@ -41,6 +44,18 @@ function App() {
             exact
             path="/add-student"
             element={<AddStudent />}
+          >
+          </Route>
+          <Route
+            exact
+            path="/edit-student/:id"
+            element={<EditStudent />}
+          >
+          </Route>
+          <Route
+            exact
+            path="/student-profile/:id"
+            element={<ProfileStudent />}
           >
           </Route>
         </Routes>
